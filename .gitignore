@@ -1,0 +1,17 @@
+*.ai
+*.DS_Store
+*.eps
+*.pdf
+*.psd
+*.pyc
+*.pyc
+*.sublime-project
+*.sublime-workspace
+*.tif
+*.zip
+.jsbeautifyrc
+.jsbeautifyrc
+__pycache__
+node_modules
+notes.txt
+venv
