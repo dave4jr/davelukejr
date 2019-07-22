@@ -1,23 +1,25 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
-
-# production
-/build
-
-# misc
+*.ai
+*.eps
+*.pdf
+*.psd
+*.pyc
+*.pyc
+*.sublime-project
+*.sublime-workspace
+*.tif
+*.zip
 .DS_Store
-.env.local
 .env.development.local
-.env.test.local
+.env.local
 .env.production.local
-
+.env.test.local
+.jsbeautifyrc
+.pnp.js
+/.pnp
+/build
+/coverage
+/node_modules
+__pycache__
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
