@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Dave Luke Jr</title>
+	
+	<!-- CSS -->
+	<link href="css/inter-ui.css" rel="stylesheet">
+	<link href="css/moving-letters.css" rel="stylesheet">
+	
+	<!-- JS -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/anime.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/moving-letters.js"></script>
+</head>
+<body class="moving-letters">
+	<canvas class="color-overlay" id="color-overlay"></canvas>
+	<div class="header">
+		<div class="site-nav-animation-wrapper menu-animation-wrapper">
+			<div class="site-nav-animated-background menu-animated-background"></div>
+		</div>
+		<a href="../index.html" class="menu menu-white menu-movingLetters">
+			<span class="menu-icon-line-1 menu-icon-line"></span>
+			<span class="menu-icon-line-2 menu-icon-line"></span>
+			<span class="menu-icon-line-3 menu-icon-line"></span>
+		</a>
+		<div class="site-nav-overlay js-nav">
+			<div class="nav-content">
+				<div class="js-nav-header nav-header">
+					<span class="nav-header-text">Tobias Ahlin</span>
+					<div class="nav-header-line js-nav-header-line"></div>
+				</div>
+				<ul class="nav-categories">
+					<li class="nav-category js-nav-animate"><a href="../index.html" class="nav-link">Overview</a></li>
+					<li class="nav-category js-nav-animate"><a href="../blog/index.html" class="nav-link">Blog</a></li>
+					<li class="nav-category js-nav-animate"><a href="../blog/tutorials/index.html" class="nav-link">Tutorials</a></li>
+					<li class="nav-category js-nav-animate"><a href="../speaking/index.html" class="nav-link">Speaking</a></li>
+				</ul>
+				<div class="nav-sublinks js-nav-animate">
+					<div class="js-nav-animate">
+						<a class="nav-link nav-sublink" href="index.html">Moving Letters</a>
+						<a class="nav-link nav-sublink" href="../typesource/index.html">TypeSource</a>
+						<a class="nav-link nav-sublink" href="../spinkit/index.html">SpinKit</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<h1 class="header-title">Moving Letters</h1>
+		<div class="header-links">
+			<a href="../../twitter.com/tobiasahlin.html" class="header-link">
+				<svg class="contact-icon twitter-icon-svg" fill="#fff" xmlns="http://www.w3.org/2000/svg" width="60" height="49" viewBox="0 0 60 49">
+					<path d="M60 5.8a32.794 32.794 0 0 1-7.02 2A12.573 12.573 0 0 0 58.416.9a22.046 22.046 0 0 1-7.924 3A11.967 11.967 0 0 0 41.435 0 12.256 12.256 0 0 0 29.21 12.4a11.72 11.72 0 0 0 .225 2.8A34.736 34.736 0 0 1 4.075 2.1 11.406 11.406 0 0 0 2.49 8.3a12.24 12.24 0 0 0 5.436 10.3 12.607 12.607 0 0 1-5.66-1.6v.3a12.426 12.426 0 0 0 9.96 12.1 11.632 11.632 0 0 1-3.168.5 7.87 7.87 0 0 1-2.265-.2 12.483 12.483 0 0 0 11.548 8.7 23.817 23.817 0 0 1-15.4 5.3A14.578 14.578 0 0 1 0 43.5 35.742 35.742 0 0 0 18.79 49c22.64 0 35.094-19.1 35.094-35.7v-1.6a16.4 16.4 0 0 0 6.113-5.9z" />
+				</svg>
+			</a>
+		</div>
+	</div>
+	<div class="composition-source">
+		<a href="index.html" class="composition-back-button"><img class="composition-back-image" src="images/back-circle.svg" width="51"></a>
+		<div class="composition-source-container">
+			<h1 class="composition-source-header composition-source-text">Effect / 02</h1>
+			<h2 class="composition-source-subheader composition-source-text">HTML</h2>
+			<pre class="highlight composition-source-text"><code class="composition-source-code composition-source-code-html"></code></pre>
+			<h2 class="composition-source-subheader composition-source-text">CSS</h2>
+			<pre class="highlight composition-source-text"><code class="composition-source-code composition-source-code-css"></code></pre>
+			<h2 class="composition-source-subheader composition-source-text">Javascript</h2>
+			<pre class="highlight composition-source-text"><code class="composition-source-code composition-source-code-js"></code></pre>
+		</div>
+	</div>
+	<div class="compositions">
+		<div class="composition" style="background-color: #9ba5b5">
+			<span class="composition-hint">
+		<img class="composition-hint-arrows" src="images/source.svg" width="18" height="13">
+		Source</span>
+			<pre class="hidden"><code class="composition-static-html">&lt;h1 class=&quot;ml1&quot;&gt;
+	&lt;span class=&quot;text-wrapper&quot;&gt;
+		&lt;span class=&quot;line line1&quot;&gt;&lt;/span&gt;
+		&lt;span class=&quot;letters&quot;&gt;THURSDAY&lt;/span&gt;
+		&lt;span class=&quot;line line2&quot;&gt;&lt;/span&gt;
+	&lt;/span&gt;
+&lt;/h1&gt;
+
+</code></pre>
+			<div class="composition-wrapper" data-color="9ba5b5">
+				<h1 class="ml1">
+	<span class="text-wrapper">
+		<span class="line line1"></span>
+		<span class="letters">THURSDAY</span>
+		<span class="line line2"></span>
+	</span>
+</h1>
+				<!--more-->
+				<script>
+				// Wrap every letter in a span
+				$('.ml1 .letters').each(function() {
+					$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+				});
+
+				ml.timelines["ml1"] = anime.timeline({
+						loop: true
+					})
+					.add({
+						targets: '.ml1 .letter',
+						scale: [0.3, 1],
+						opacity: [0, 1],
+						translateZ: 0,
+						easing: "easeOutExpo",
+						duration: 600,
+						delay: function(el, i) {
+							return 70 * (i + 1)
+						}
+					}).add({
+						targets: '.ml1 .line',
+						scaleX: [0, 1],
+						opacity: [0.5, 1],
+						easing: "easeOutExpo",
+						duration: 700,
+						offset: '-=875',
+						delay: function(el, i, l) {
+							return 80 * (l - i);
+						}
+					}).add({
+						targets: '.ml1',
+						opacity: 0,
+						duration: 1000,
+						easing: "easeOutExpo",
+						delay: 1000
+					});
+				</script>
+			</div>
+		</div>
+		<div class="composition" style="background-color: #e8c3b9">
+			<span class="composition-hint">
+		<img class="composition-hint-arrows" src="images/source.svg" width="18" height="13">
+		Source</span>
+			<pre class="hidden"><code class="composition-static-html">&lt;h1 class=&quot;ml2&quot;&gt;Sunny mornings&lt;/h1&gt;
+
+</code></pre>
+			<div class="composition-wrapper" data-color="e8c3b9">
+				<h1 class="ml2">Sunny mornings</h1>
+				<!--more-->
+				<script>
+				// Wrap every letter in a span
+				$('.ml2').each(function() {
+					$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+				});
+
+				ml.timelines["ml2"] = anime.timeline({
+						loop: true
+					})
+					.add({
+						targets: '.ml2 .letter',
+						scale: [4, 1],
+						opacity: [0, 1],
+						translateZ: 0,
+						easing: "easeOutExpo",
+						duration: 950,
+						delay: function(el, i) {
+							return 70 * i;
+						}
+					}).add({
+						targets: '.ml2',
+						opacity: 0,
+						duration: 1000,
+						easing: "easeOutExpo",
+						delay: 1000
+					});
+				</script>
+				<style>
+				.ml2 {
+					font-weight: 900;
+					font-size: 3.5em;
+				}
+				
+				.ml2 .letter {
+					display: inline-block;
+					line-height: 1em;
+				}
+				</style>
+			</div>
+		</div>
+		<div class="composition" style="background-color: #224a54">
+			<span class="composition-hint">
+		<img class="composition-hint-arrows" src="images/source.svg" width="18" height="13">
+		Source</span>
+			<pre class="hidden"><code class="composition-static-html">&lt;h1 class=&quot;ml3&quot;&gt;Great Thinkers&lt;/h1&gt;
+
+</code></pre>
+			<div class="composition-wrapper" data-color="224a54">
+				<h1 class="ml3">Great Thinkers</h1>
+				<!--more-->
+				<script>
+				// Wrap every letter in a span
+				$('.ml3').each(function() {
+					$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+				});
+
+				ml.timelines["ml3"] = anime.timeline({
+						loop: true
+					})
+					.add({
+						targets: '.ml3 .letter',
+						opacity: [0, 1],
+						easing: "easeInOutQuad",
+						duration: 2250,
+						delay: function(el, i) {
+							return 150 * (i + 1)
+						}
+					}).add({
+						targets: '.ml3',
+						opacity: 0,
+						duration: 1000,
+						easing: "easeOutExpo",
+						delay: 1000
+					});
+				</script>
+				<style>
+				.ml3 {
+					font-weight: 900;
+					font-size: 3.5em;
+				}
+				</style>
+			</div>
+		</div>
+		<div class="composition" style="background-color: #1a1a1a">
+			<span class="composition-hint">
+		<img class="composition-hint-arrows" src="images/source.svg" width="18" height="13">
+		Source</span>
+			<pre class="hidden"><code class="composition-static-html">&lt;h1 class=&quot;ml4&quot;&gt;
+	&lt;span class=&quot;letters letters-1&quot;&gt;Ready&lt;/span&gt;
+	&lt;span class=&quot;letters letters-2&quot;&gt;Set&lt;/span&gt;
+	&lt;span class=&quot;letters letters-3&quot;&gt;Go!&lt;/span&gt;
+&lt;/h1&gt;
+
+</code></pre>
+			<div class="composition-wrapper" data-color="1a1a1a">
+				<h1 class="ml4">
+	<span class="letters letters-1">Ready</span>
+	<span class="letters letters-2">Set</span>
+	<span class="letters letters-3">Go!</span>
+</h1>
+				<!--more-->
+				<script>
+				var ml4 = {};
+				ml4.opacityIn = [0, 1];
+				ml4.scaleIn = [0.2, 1];
+				ml4.scaleOut = 3;
+				ml4.durationIn = 800;
+				ml4.durationOut = 600;
+				ml4.delay = 500;
+
+				ml.timelines["ml4"] = anime.timeline({
+						loop: true
+					})
+					.add({
+						targets: '.ml4 .letters-1',
+						opacity: ml4.opacityIn,
+						scale: ml4.scaleIn,
+						duration: ml4.durationIn
+					}).add({
+						targets: '.ml4 .letters-1',
+						opacity: 0,
+						scale: ml4.scaleOut,
+						duration: ml4.durationOut,
+						easing: "easeInExpo",
+						delay: ml4.delay
+					}).add({
+						targets: '.ml4 .letters-2',
+						opacity: ml4.opacityIn,
+						scale: ml4.scaleIn,
+						duration: ml4.durationIn
+					}).add({
+						targets: '.ml4 .letters-2',
+						opacity: 0,
+						scale: ml4.scaleOut,
+						duration: ml4.durationOut,
+						easing: "easeInExpo",
+						delay: ml4.delay
+					}).add({
+						targets: '.ml4 .letters-3',
+						opacity: ml4.opacityIn,
+						scale: ml4.scaleIn,
+						duration: ml4.durationIn
+					}).add({
+						targets: '.ml4 .letters-3',
+						opacity: 0,
+						scale: ml4.scaleOut,
+						duration: ml4.durationOut,
+						easing: "easeInExpo",
+						delay: ml4.delay
+					}).add({
+						targets: '.ml4',
+						opacity: 0,
+						duration: 500,
+						delay: 500
+					});
+				</script>
+				<style>
+				.ml4 {
+					position: relative;
+					font-weight: 900;
+					font-size: 4.5em;
+				}
+				
+				.ml4 .letters {
+					position: absolute;
+					margin: auto;
+					left: 0;
+					top: 0.3em;
+					right: 0;
+					opacity: 0;
+				}
+				</style>
+			</div>
+		</div>
+		<div class="composition" style="background-color: #f3e9c6">
+			<span class="composition-hint">
+		<img class="composition-hint-arrows" src="images/source.svg" width="18" height="13">
+		Source</span>
+			<pre class="hidden"><code class="composition-static-html">&lt;h1 class=&quot;ml5&quot;&gt;
+	&lt;span class=&quot;text-wrapper&quot;&gt;
+		&lt;span class=&quot;line line1&quot;&gt;&lt;/span&gt;
+		&lt;span class=&quot;letters letters-left&quot;&gt;Signal&lt;/span&gt;
+		&lt;span class=&quot;letters ampersand&quot;&gt;&amp;amp;&lt;/span&gt;
+		&lt;span class=&quot;letters letters-right&quot;&gt;Noise&lt;/span&gt;
+		&lt;span class=&quot;line line2&quot;&gt;&lt;/span&gt;
+	&lt;/span&gt;
+&lt;/h1&gt;
+
+</code></pre>
+			<div class="composition-wrapper" data-color="f3e9c6">
+				<h1 class="ml5">
+	<span class="text-wrapper">
+		<span class="line line1"></span>
+		<span class="letters letters-left">Signal</span>
+		<span class="letters ampersand">&amp;</span>
+		<span class="letters letters-right">Noise</span>
+		<span class="line line2"></span>
+	</span>
+</h1>
+				<!--more-->
+				<script>
+				ml.timelines["ml5"] = anime.timeline({
+						loop: true
+					})
+					.add({
+						targets: '.ml5 .line',
+						opacity: [0.5, 1],
+						scaleX: [0, 1],
+						easing: "easeInOutExpo",
+						duration: 700
+					}).add({
+						targets: '.ml5 .line',
+						duration: 600,
+						easing: "easeOutExpo",
+						translateY: function(e, i, l) {
+							var offset = -0.625 + 0.625 * 2 * i;
+							return offset + "em";
+						}
+					}).add({
+						targets: '.ml5 .ampersand',
+						opacity: [0, 1],
+						scaleY: [0.5, 1],
+						easing: "easeOutExpo",
+						duration: 600,
+						offset: '-=600'
+					}).add({
+						targets: '.ml5 .letters-left',
+						opacity: [0, 1],
+						translateX: ["0.5em", 0],
+						easing: "easeOutExpo",
+						duration: 600,
+						offset: '-=300'
+					}).add({
+						targets: '.ml5 .letters-right',
+						opacity: [0, 1],
+						translateX: ["-0.5em", 0],
+						easing: "easeOutExpo",
+						duration: 600,
+						offset: '-=600'
+					}).add({
+						targets: '.ml5',
+						opacity: 0,
+						duration: 1000,
+						easing: "easeOutExpo",
+						delay: 1000
+					});
+				</script>
+				<style>
+				.ml5 {
+					position: relative;
+					font-weight: 300;
+					font-size: 4.5em;
+					color: #402d2d;
+				}
+				
+				.ml5 .text-wrapper {
+					position: relative;
+					display: inline-block;
+					padding-top: 0.1em;
+					padding-right: 0.05em;
+					padding-bottom: 0.15em;
+					line-height: 1em;
+				}
+				
+				.ml5 .line {
+					position: absolute;
+					left: 0;
+					top: 0;
+					bottom: 0;
+					margin: auto;
+					height: 3px;
+					width: 100%;
+					background-color: #402d2d;
+					transform-origin: 0.5 0;
+				}
+				
+				.ml5 .ampersand {
+					font-family: Baskerville, "EB Garamond", serif;
+					font-style: italic;
+					font-weight: 400;
+					width: 1em;
+					margin-right: -0.1em;
+					margin-left: -0.1em;
+				}
+				
+				.ml5 .letters {
+					display: inline-block;
+					opacity: 0;
+				}
+				</style>
+			</div>
+		</div>
+		<div class="composition" style="background-color: #c1605c">
+			<span class="composition-hint">
+		<img class="composition-hint-arrows" src="images/source.svg" width="18" height="13">
+		Source</span>
+			<pre class="hidden"><code class="composition-static-html">&lt;h1 class=&quot;ml6&quot;&gt;
+	&lt;span class=&quot;text-wrapper&quot;&gt;
+		&lt;span class=&quot;letters&quot;&gt;Beautiful Questions&lt;/span&gt;
+	&lt;/span&gt;
+&lt;/h1&gt;
+
+</code></pre>
+			<div class="composition-wrapper" data-color="c1605c">
+				<h1 class="ml6">
+	<span class="text-wrapper">
+		<span class="letters">Beautiful Questions</span>
+	</span>
+</h1>
+				<!--more-->
+				<script>
+				// Wrap every letter in a span
+				$('.ml6 .letters').each(function() {
+					$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+				});
+
+				ml.timelines["ml6"] = anime.timeline({
+						loop: true
+					})
+					.add({
+						targets: '.ml6 .letter',
+						translateY: ["1.1em", 0],
+						translateZ: 0,
+						duration: 750,
+						delay: function(el, i) {
+							return 50 * i;
+						}
+					}).add({
+						targets: '.ml6',
+						opacity: 0,
+						duration: 1000,
+						easing: "easeOutExpo",
+						delay: 1000
+					});
+				</script>
+				<style>
+				.ml6 {
+					position: relative;
+					font-weight: 900;
+					font-size: 3.3em;
+				}
+				
+				.ml6 .text-wrapper {
+					position: relative;
+					display: inline-block;
+					padding-top: 0.2em;
+					padding-right: 0.05em;
+					padding-bottom: 0.1em;
+					overflow: hidden;
+				}
+				
+				.ml6 .letter {
+					display: inline-block;
+					line-height: 1em;
+				}
+				</style>
+			</div>
+		</div>
+		<div class="composition" style="background-color: #45383c">
+			<span class="composition-hint">
+		<img class="composition-hint-arrows" src="images/source.svg" width="18" height="13">
+		Source</span>
+			<pre class="hidden"><code class="composition-static-html">&lt;h1 class=&quot;ml7&quot;&gt;
+	&lt;span class=&quot;text-wrapper&quot;&gt;
+		&lt;span class=&quot;letters&quot;&gt;Reality is broken&lt;/span&gt;
+	&lt;/span&gt;
+&lt;/h1&gt;
+
+</code></pre>
+			<div class="composition-wrapper" data-color="45383c">
+				<h1 class="ml7">
+	<span class="text-wrapper">
+		<span class="letters">Reality is broken</span>
+	</span>
+</h1>
+				<!--more-->
+				<script>
+				// Wrap every letter in a span
+				$('.ml7 .letters').each(function() {
+					$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+				});
+
+				ml.timelines["ml7"] = anime.timeline({
+						loop: true
+					})
+					.add({
+						targets: '.ml7 .letter',
+						translateY: ["1.1em", 0],
+						translateX: ["0.55em", 0],
+						translateZ: 0,
+						rotateZ: [180, 0],
+						duration: 750,
+						easing: "easeOutExpo",
+						delay: function(el, i) {
+							return 50 * i;
+						}
+					}).add({
+						targets: '.ml7',
+						opacity: 0,
+						duration: 1000,
+						easing: "easeOutExpo",
+						delay: 1000
+					});
+				</script>
+				<style>
+				.ml7 {
+					position: relative;
+					font-weight: 900;
+					font-size: 3.7em;
+				}
+				
+				.ml7 .text-wrapper {
+					position: relative;
+					display: inline-block;
+					padding-top: 0.2em;
+					padding-right: 0.05em;
+					padding-bottom: 0.1em;
+					overflow: hidden;
+				}
+				
+				.ml7 .letter {
+					transform-origin: 0 100%;
+					display: inline-block;
+					line-height: 1em;
+				}
+				</style>
+			</div>
+		</div>
+		<div class="composition" style="background-color: #98bec8">
+			<span class="composition-hint">
+		<img class="composition-hint-arrows" src="images/source.svg" width="18" height="13">
+		Source</span>
+			<pre class="hidden"><code class="composition-static-html">&lt;h1 class=&quot;ml8&quot;&gt;
+	&lt;span class=&quot;letters-container&quot;&gt;
+		&lt;span class=&quot;letters letters-left&quot;&gt;Hi&lt;/span&gt;
+		&lt;span class=&quot;letters bang&quot;&gt;!&lt;/span&gt;
+	&lt;/span&gt;
+	&lt;span class=&quot;circle circle-white&quot;&gt;&lt;/span&gt;
+	&lt;span class=&quot;circle circle-dark&quot;&gt;&lt;/span&gt;
+	&lt;span class=&quot;circle circle-container&quot;&gt;&lt;span class=&quot;circle circle-dark-dashed&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;/h1&gt;
+
+</code></pre>
+			<div class="composition-wrapper" data-color="98bec8">
+				<h1 class="ml8">
+	<span class="letters-container">
+		<span class="letters letters-left">Hi</span>
+		<span class="letters bang">!</span>
+	</span>
+	<span class="circle circle-white"></span>
+	<span class="circle circle-dark"></span>
+	<span class="circle circle-container"><span class="circle circle-dark-dashed"></span></span>
+</h1>
+				<!--more-->
+				<script>
+				ml.timelines["ml8"] = anime.timeline({
+						loop: true
+					})
+					.add({
+						targets: '.ml8 .circle-white',
+						scale: [0, 3],
+						opacity: [1, 0],
+						easing: "easeInOutExpo",
+						rotateZ: 360,
+						duration: 1100
+					}).add({
+						targets: '.ml8 .circle-container',
+						scale: [0, 1],
+						duration: 1100,
+						easing: "easeInOutExpo",
+						offset: '-=1000'
+					}).add({
+						targets: '.ml8 .circle-dark',
+						scale: [0, 1],
+						duration: 1100,
+						easing: "easeOutExpo",
+						offset: '-=600'
+					}).add({
+						targets: '.ml8 .letters-left',
+						scale: [0, 1],
+						duration: 1200,
+						offset: '-=550'
+					}).add({
+						targets: '.ml8 .bang',
+						scale: [0, 1],
+						rotateZ: [45, 15],
+						duration: 1200,
+						offset: '-=1000'
+					}).add({
+						targets: '.ml8',
+						opacity: 0,
+						duration: 1000,
+						easing: "easeOutExpo",
+						delay: 1400
+					});
+
+				anime({
+					targets: '.ml8 .circle-dark-dashed',
+					rotateZ: 360,
+					duration: 8000,
+					easing: "linear",
+					loop: true
+				});
+				</script>
+				<style>
+				h1.ml8 {
+					font-weight: 900;
+					font-size: 4.5em;
+					color: #fff;
+					width: 3em;
+					height: 3em;
+				}
+				
+				.ml8 .letters-container {
+					position: absolute;
+					left: 0;
+					right: 0;
+					margin: auto;
+					top: 0;
+					bottom: 0;
+					height: 1em;
+				}
+				
+				.ml8 .letters {
+					position: relative;
+					z-index: 2;
+					display: inline-block;
+					line-height: 0.7em;
+					right: -0.12em;
+					top: -0.2em;
+				}
+				
+				.ml8 .bang {
+					font-size: 1.4em;
+					top: auto;
+					left: -0.06em;
+				}
+				
+				.ml8 .circle {
+					position: absolute;
+					left: 0;
+					right: 0;
+					margin: auto;
+					top: 0;
+					bottom: 0;
+				}
+				
+				.ml8 .circle-white {
+					width: 3em;
+					height: 3em;
+					border: 2px dashed white;
+					border-radius: 2em;
+				}
+				
+				.ml8 .circle-dark {
+					width: 2.2em;
+					height: 2.2em;
+					background-color: #4f7b86;
+					border-radius: 3em;
+					z-index: 1;
+				}
+				
+				.ml8 .circle-dark-dashed {
+					border-radius: 2.4em;
+					background-color: transparent;
+					border: 2px dashed #4f7b86;
+					width: 2.3em;
+					height: 2.3em;
+				}
+				</style>
+			</div>
+		</div>
+		<div class="composition" style="background-color: #1a1a1a">
+			<span class="composition-hint">
+		<img class="composition-hint-arrows" src="images/source.svg" width="18" height="13">
+		Source</span>
+			<pre class="hidden"><code class="composition-static-html">&lt;h1 class=&quot;ml9&quot;&gt;
+	&lt;span class=&quot;text-wrapper&quot;&gt;
+		&lt;span class=&quot;letters&quot;&gt;Coffee mornings&lt;/span&gt;
+	&lt;/span&gt;
+&lt;/h1&gt;
+
+</code></pre>
+			<div class="composition-wrapper" data-color="1a1a1a">
+				<h1 class="ml9">
+	<span class="text-wrapper">
+		<span class="letters">Coffee mornings</span>
+	</span>
+</h1>
+				<!--more-->
+				<script>
+				// Wrap every letter in a span
+				$('.ml9 .letters').each(function() {
+					$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+				});
+
+				ml.timelines["ml9"] = anime.timeline({
+						loop: true
+					})
+					.add({
+						targets: '.ml9 .letter',
+						scale: [0, 1],
+						duration: 1500,
+						elasticity: 600,
+						delay: function(el, i) {
+							return 45 * (i + 1)
+						}
+					}).add({
+						targets: '.ml9',
+						opacity: 0,
+						duration: 1000,
+						easing: "easeOutExpo",
+						delay: 1000
+					});
+				</script>
+				<style>
+				.ml9 {
+					position: relative;
+					font-weight: 200;
+					font-size: 4em;
+				}
+				
+				.ml9 .text-wrapper {
+					position: relative;
+					display: inline-block;
+					padding-top: 0.2em;
+					padding-right: 0.05em;
+					padding-bottom: 0.1em;
+					overflow: hidden;
+				}
+				
+				.ml9 .letter {
+					transform-origin: 50% 100%;
+					display: inline-block;
+					line-height: 1em;
+				}
+				</style>
+			</div>
+		</div>
+		<div class="composition" style="background-color: #224a54">
+			<span class="composition-hint">
+		<img class="composition-hint-arrows" src="images/source.svg" width="18" height="13">
+		Source</span>
+			<pre class="hidden"><code class="composition-static-html">&lt;h1 class=&quot;ml10&quot;&gt;
+	&lt;span class=&quot;text-wrapper&quot;&gt;
+		&lt;span class=&quot;letters&quot;&gt;Domino Dreams&lt;/span&gt;
+	&lt;/span&gt;
+&lt;/h1&gt;
+
+</code></pre>
+			<div class="composition-wrapper" data-color="224a54">
+				<h1 class="ml10">
+	<span class="text-wrapper">
+		<span class="letters">Domino Dreams</span>
+	</span>
+</h1>
+				<!--more-->
+				<script>
+				// Wrap every letter in a span
+				$('.ml10 .letters').each(function() {
+					$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+				});
+
+				ml.timelines["ml10"] = anime.timeline({
+						loop: true
+					})
+					.add({
+						targets: '.ml10 .letter',
+						rotateY: [-90, 0],
+						duration: 1300,
+						delay: function(el, i) {
+							return 45 * i;
+						}
+					}).add({
+						targets: '.ml10',
+						opacity: 0,
+						duration: 1000,
+						easing: "easeOutExpo",
+						delay: 1000
+					});
+				</script>
+				<style>
+				.ml10 {
+					position: relative;
+					font-weight: 900;
+					font-size: 4em;
+				}
+				
+				.ml10 .text-wrapper {
+					position: relative;
+					display: inline-block;
+					padding-top: 0.2em;
+					padding-right: 0.05em;
+					padding-bottom: 0.1em;
+					overflow: hidden;
+				}
+				
+				.ml10 .letter {
+					display: inline-block;
+					line-height: 1em;
+					transform-origin: 0 0;
+				}
+				</style>
+			</div>
+		</div>
+		<div class="composition" style="background-color: #e8c3b9">
+			<span class="composition-hint">
+		<img class="composition-hint-arrows" src="images/source.svg" width="18" height="13">
+		Source</span>
+			<pre class="hidden"><code class="composition-static-html">&lt;h1 class=&quot;ml11&quot;&gt;
+	&lt;span class=&quot;text-wrapper&quot;&gt;
+		&lt;span class=&quot;line line1&quot;&gt;&lt;/span&gt;
+		&lt;span class=&quot;letters&quot;&gt;Hello Goodbye&lt;/span&gt;
+	&lt;/span&gt;
+&lt;/h1&gt;
+
+</code></pre>
+			<div class="composition-wrapper" data-color="e8c3b9">
+				<h1 class="ml11">
+	<span class="text-wrapper">
+		<span class="line line1"></span>
+		<span class="letters">Hello Goodbye</span>
+	</span>
+</h1>
+				<!--more-->
+				<style>
+				.ml11 {
+					font-weight: 900;
+					font-size: 3.5em;
+				}
+				
+				.ml11 .text-wrapper {
+					position: relative;
+					display: inline-block;
+					padding-top: 0.1em;
+					padding-right: 0.05em;
+					padding-bottom: 0.15em;
+				}
+				
+				.ml11 .line {
+					opacity: 0;
+					position: absolute;
+					left: 0;
+					height: 100%;
+					width: 3px;
+					background-color: #fff;
+					transform-origin: 0 50%;
+				}
+				
+				.ml11 .line1 {
+					top: 0;
+					left: 0;
+				}
+				
+				.ml11 .letter {
+					display: inline-block;
+					line-height: 1em;
+				}
+				</style>
+				<script>
+				// Wrap every letter in a span
+				$('.ml11 .letters').each(function() {
+					$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+				});
+
+				ml.timelines["ml11"] = anime.timeline({
+						loop: true
+					})
+					.add({
+						targets: '.ml11 .line',
+						scaleY: [0, 1],
+						opacity: [0.5, 1],
+						easing: "easeOutExpo",
+						duration: 700
+					})
+					.add({
+						targets: '.ml11 .line',
+						translateX: [0, $(".ml11 .letters").width()],
+						easing: "easeOutExpo",
+						duration: 700,
+						delay: 100
+					}).add({
+						targets: '.ml11 .letter',
+						opacity: [0, 1],
+						easing: "easeOutExpo",
+						duration: 600,
+						offset: '-=775',
+						delay: function(el, i) {
+							return 34 * (i + 1)
+						}
+					}).add({
+						targets: '.ml11',
+						opacity: 0,
+						duration: 1000,
+						easing: "easeOutExpo",
+						delay: 1000
+					});
+				</script>
+			</div>
+		</div>
+		<div class="composition" style="background-color: #9ba5b5">
+			<span class="composition-hint">
+		<img class="composition-hint-arrows" src="images/source.svg" width="18" height="13">
+		Source</span>
+			<pre class="hidden"><code class="composition-static-html">&lt;h1 class=&quot;ml12&quot;&gt;A new production&lt;/h1&gt;
+
+</code></pre>
+			<div class="composition-wrapper" data-color="9ba5b5">
+				<h1 class="ml12">A new production</h1>
+				<!--more-->
+				<script>
+				// Wrap every letter in a span
+				$('.ml12').each(function() {
+					$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+				});
+
+				ml.timelines["ml12"] = anime.timeline({
+						loop: true
+					})
+					.add({
+						targets: '.ml12 .letter',
+						translateX: [40, 0],
+						translateZ: 0,
+						opacity: [0, 1],
+						easing: "easeOutExpo",
+						duration: 1200,
+						delay: function(el, i) {
+							return 500 + 30 * i;
+						}
+					}).add({
+						targets: '.ml12 .letter',
+						translateX: [0, -30],
+						opacity: [1, 0],
+						easing: "easeInExpo",
+						duration: 1100,
+						delay: function(el, i) {
+							return 100 + 30 * i;
+						}
+					});
+				</script>
+				<style>
+				.ml12 {
+					font-weight: 200;
+					font-size: 1.8em;
+					text-transform: uppercase;
+					letter-spacing: 0.5em;
+				}
+				
+				.ml12 .letter {
+					display: inline-block;
+					line-height: 1em;
+				}
+				</style>
+			</div>
+		</div>
+		<div class="composition" style="background-color: #98bec8">
+			<span class="composition-hint">
+		<img class="composition-hint-arrows" src="images/source.svg" width="18" height="13">
+		Source</span>
+			<pre class="hidden"><code class="composition-static-html">&lt;h1 class=&quot;ml13&quot;&gt;Rising Strong&lt;/h1&gt;
+
+</code></pre>
+			<div class="composition-wrapper" data-color="98bec8">
+				<h1 class="ml13">Rising Strong</h1>
+				<!--more-->
+				<script>
+				// Wrap every letter in a span
+				$('.ml13').each(function() {
+					$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+				});
+
+				ml.timelines["ml13"] = anime.timeline({
+						loop: true
+					})
+					.add({
+						targets: '.ml13 .letter',
+						translateY: [100, 0],
+						translateZ: 0,
+						opacity: [0, 1],
+						easing: "easeOutExpo",
+						duration: 1400,
+						delay: function(el, i) {
+							return 300 + 30 * i;
+						}
+					}).add({
+						targets: '.ml13 .letter',
+						translateY: [0, -100],
+						opacity: [1, 0],
+						easing: "easeInExpo",
+						duration: 1200,
+						delay: function(el, i) {
+							return 100 + 30 * i;
+						}
+					});
+				</script>
+				<style>
+				.ml13 {
+					font-size: 1.9em;
+					text-transform: uppercase;
+					letter-spacing: 0.5em;
+					font-weight: 600;
+				}
+				
+				.ml13 .letter {
+					display: inline-block;
+					line-height: 1em;
+				}
+				</style>
+			</div>
+		</div>
+		<div class="composition" style="background-color: #45383c">
+			<span class="composition-hint">
+		<img class="composition-hint-arrows" src="images/source.svg" width="18" height="13">
+		Source</span>
+			<pre class="hidden"><code class="composition-static-html">&lt;h1 class=&quot;ml14&quot;&gt;
+	&lt;span class=&quot;text-wrapper&quot;&gt;
+		&lt;span class=&quot;letters&quot;&gt;Find Your Element&lt;/span&gt;
+		&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;
+	&lt;/span&gt;
+&lt;/h1&gt;
+
+</code></pre>
+			<div class="composition-wrapper" data-color="45383c">
+				<h1 class="ml14">
+	<span class="text-wrapper">
+		<span class="letters">Find Your Element</span>
+		<span class="line"></span>
+	</span>
+</h1>
+				<!--more-->
+				<script>
+				// Wrap every letter in a span
+				$('.ml14 .letters').each(function() {
+					$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+				});
+
+				ml.timelines["ml14"] = anime.timeline({
+						loop: true
+					})
+					.add({
+						targets: '.ml14 .line',
+						scaleX: [0, 1],
+						opacity: [0.5, 1],
+						easing: "easeInOutExpo",
+						duration: 900
+					}).add({
+						targets: '.ml14 .letter',
+						opacity: [0, 1],
+						translateX: [40, 0],
+						translateZ: 0,
+						scaleX: [0.3, 1],
+						easing: "easeOutExpo",
+						duration: 800,
+						offset: '-=600',
+						delay: function(el, i) {
+							return 150 + 25 * i;
+						}
+					}).add({
+						targets: '.ml14',
+						opacity: 0,
+						duration: 1000,
+						easing: "easeOutExpo",
+						delay: 1000
+					});
+				</script>
+				<style>
+				.ml14 {
+					font-weight: 200;
+					font-size: 3.2em;
+				}
+				
+				.ml14 .text-wrapper {
+					position: relative;
+					display: inline-block;
+					padding-top: 0.1em;
+					padding-right: 0.05em;
+					padding-bottom: 0.15em;
+				}
+				
+				.ml14 .line {
+					opacity: 0;
+					position: absolute;
+					left: 0;
+					height: 2px;
+					width: 100%;
+					background-color: #fff;
+					transform-origin: 100% 100%;
+					bottom: 0;
+				}
+				
+				.ml14 .letter {
+					display: inline-block;
+					line-height: 1em;
+				}
+				</style>
+			</div>
+		</div>
+		<div class="composition" style="background-color: #c1605c">
+			<span class="composition-hint">
+		<img class="composition-hint-arrows" src="images/source.svg" width="18" height="13">
+		Source</span>
+			<pre class="hidden"><code class="composition-static-html">&lt;h1 class=&quot;ml15&quot;&gt;
+	&lt;span class=&quot;word&quot;&gt;Out&lt;/span&gt;
+	&lt;span class=&quot;word&quot;&gt;now&lt;/span&gt;
+&lt;/h1&gt;
+
+</code></pre>
+			<div class="composition-wrapper" data-color="c1605c">
+				<h1 class="ml15">
+	<span class="word">Out</span>
+	<span class="word">now</span>
+</h1>
+				<!--more-->
+				<script>
+				ml.timelines["ml15"] = anime.timeline({
+						loop: true
+					})
+					.add({
+						targets: '.ml15 .word',
+						scale: [14, 1],
+						opacity: [0, 1],
+						easing: "easeOutCirc",
+						duration: 800,
+						delay: function(el, i) {
+							return 800 * i;
+						}
+					}).add({
+						targets: '.ml15',
+						opacity: 0,
+						duration: 1000,
+						easing: "easeOutExpo",
+						delay: 1000
+					});
+				</script>
+				<style>
+				.ml15 {
+					font-weight: 800;
+					font-size: 3.8em;
+					text-transform: uppercase;
+					letter-spacing: 0.5em;
+				}
+				
+				.ml15 .word {
+					display: inline-block;
+					line-height: 1em;
+				}
+				</style>
+			</div>
+		</div>
+		<div class="composition" style="background-color: #f3e9c6">
+			<span class="composition-hint">
+		<img class="composition-hint-arrows" src="images/source.svg" width="18" height="13">
+		Source</span>
+			<pre class="hidden"><code class="composition-static-html">&lt;h1 class=&quot;ml16&quot;&gt;Made with love&lt;/h1&gt;
+
+</code></pre>
+			<div class="composition-wrapper" data-color="f3e9c6">
+				<h1 class="ml16">Made with love</h1>
+				<!--more-->
+				<script>
+				// Wrap every letter in a span
+				$('.ml16').each(function() {
+					$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+				});
+
+				ml.timelines["ml16"] = anime.timeline({
+						loop: true
+					})
+					.add({
+						targets: '.ml16 .letter',
+						translateY: [-100, 0],
+						easing: "easeOutExpo",
+						duration: 1400,
+						delay: function(el, i) {
+							return 30 * i;
+						}
+					}).add({
+						targets: '.ml16',
+						opacity: 0,
+						duration: 1000,
+						easing: "easeOutExpo",
+						delay: 1000
+					});
+				</script>
+				<style>
+				.ml16 {
+					color: #402d2d;
+					padding: 40px 0;
+					font-weight: 800;
+					font-size: 2em;
+					text-transform: uppercase;
+					letter-spacing: 0.5em;
+					overflow: hidden;
+				}
+				
+				.ml16 .letter {
+					display: inline-block;
+					line-height: 1em;
+				}
+				</style>
+			</div>
+		</div>
+	</div>
+	<div class="collection-footer-info">
+		<div class="collection-footer-box collection-footer-profile">
+			<img src="images/profile-white%402x.jpg" alt="Photo of Tobias" width="102" class="collection-profile-image">
+			<h2 class="collection-inline-header collection-inline-header-w-subheader"><a href="../../twitter.com/tobiasahlin.html">By Tobias Ahlin</a></h2>
+			<a class="collection-twitter-link" href="../../twitter.com/tobiasahlin.html">@tobiasahlin</a>
+			<p>Letter animation code is free to use, licensed under <a href="../../opensource.org/licenses/MIT.html">MIT</a>. Site design &amp; code © Tobias Ahlin, 2019.</p>
+		</div>
+		<div class="collection-footer-divider"></div>
+	</div>
+</body>
+</html>
