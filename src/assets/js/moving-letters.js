@@ -1,3 +1,7 @@
+import $ from 'jquery';
+import anime from 'animejs/lib/anime.es.js';
+import app from './app.js';
+
 var ml = {};
 ml.timelines = {};
 ml.overlay = {};
@@ -8,7 +12,7 @@ $(function() {
 	ml.onlyPlayVisible();
 
 	$(".composition-wrapper").click(function(e) {
-		ml.showComposition(this, e, { refreshAd: true });
+		ml.showComposition(this, e);
 	});
 
 	$(".composition-back-button").click(function(e) {
@@ -18,15 +22,8 @@ $(function() {
 
 	$(".header-title").click(ml.animateHeader);
 
-	$(window)
-		.on("scroll resize", ml.onlyPlayVisible)
-		.on("resize", ml.overlay.resizeCanvas)
-		// .on("scroll", ml.updateAdVisibility);
-
-	$(document)
-		.on("app:menuDidReveal", ml.pauseAllCompositions)
-		.on("app:menuWillHide", ml.onlyPlayVisible)
-		.on("pressed:ESC", ml.hideSource);
+	$(window).on("scroll resize", ml.onlyPlayVisible).on("resize", ml.overlay.resizeCanvas);
+	$(document).on("app:menuDidReveal", ml.pauseAllCompositions).on("app:menuWillHide", ml.onlyPlayVisible).on("pressed:ESC", ml.hideSource);
 
 	// Load composition from hash (if defined)
 	ml.loadCompositionFromCurrentHash();
@@ -39,8 +36,7 @@ ml.init = function() {
 	// Overlay
 	ml.overlay.c = document.getElementById("color-overlay");
 	ml.overlay.ctx = ml.overlay.c.getContext("2d");
-	ml.overlay.cH;
-	ml.overlay.cW;
+	
 	ml.overlay.bgColor = "transparent";
 	ml.overlay.animations = [];
 	ml.overlay.resizeCanvas();
@@ -92,12 +88,12 @@ ml.compShouldPlay = function(comp) {
 
 	// Check if bottom of comp is above view or if top of comp is below view
 	if (bounds.bottom < 0+offset || bounds.top > winHeight-offset) return false;
-	// Default to true
 	return true;
 }
 
 ml.playComposition = function(comp) {
 	var compID = $(comp).find("h1").attr("class");
+	console.log(compID);
 	ml.timelines[compID].play();
 }
 
@@ -121,28 +117,7 @@ ml.pauseAllCompositions = function() {
 ml.showComposition = function(comp, e, options) {
 	if ($(comp).hasClass("composition-active")) return;
 	var $comp = $(comp).parent();
-	ml.prepareSourceForComposition($comp);
-	ml.showSourceForComposition(comp, e, options);
-}
-
-ml.prepareSourceForComposition = function($comp) {
-	// Set header
-	var compNumber = $(".composition").index($comp) + 1;
-	$(".composition-source-header").text("Effect " + compNumber);
-
-	// Set html
-	var html = $comp.find(".composition-static-html").html();
-	html = ml.prependHTMLwithJS($.trim(html));
-	$(".composition-source-code-html").html(html);
-
-	// Set CSS
-	var css = $comp.find("style").html();
-	$(".composition-source-code-css").text($.trim(css));
-
-	// Set javascript
-	var script = $comp.find("script").html();
-	script = ml.removeInternalJSFromCode(script);
-	$(".composition-source-code-js").text($.trim(script));  
+	ml.showSourceForComposition($comp, e, options);
 }
 
 ml.prependHTMLwithJS = function(html) {
@@ -161,20 +136,19 @@ ml.escapeHTML = function(html) {
 	return div.innerHTML;
 }
 
-ml.removeInternalJSFromCode = function(code) {
-	// Remove the line where it's stored in ML for pausing/playing
-	var startPosition = code.indexOf("ml.timelines[");
-	var endPosition = code.indexOf("anime.timeline(");
+// ml.removeInternalJSFromCode = function(code) {
+// 	// Remove the line where it's stored in ML for pausing/playing
+// 	var startPosition = code.indexOf("ml.timelines[");
+// 	var endPosition = code.indexOf("anime.timeline(");
 
-	return code.slice(0, startPosition) + code.slice(endPosition, code.length);
-}
+// 	return code.slice(0, startPosition) + code.slice(endPosition, code.length);
+// }
 
 ml.showSourceForComposition = function(c, e, options) {
 	ml.isShowingSource = true;
 
 	// Hide ad, then refresh it, so it can be displayed in a new position with a new ad
 	$(".ml-carbon-ad").hide().css("opacity", "0").addClass("ml-carbon-ad-source-showing").show();
-	if (options.refreshAd == true) ml.refreshAd();
 
 	$("html").addClass("is-showing-source");
 	$(c).addClass("composition-active");
@@ -235,7 +209,7 @@ ml.hideSource = function() {
 	ml.resetHash();
 
 	$(".ml-carbon-ad").hide().css("opacity", "0");
-	ml.refreshAd();
+	// ml.refreshAd();
 
 	$("html").removeClass("is-showing-source");
 	ml.onlyPlayVisible();
@@ -317,13 +291,13 @@ ml.loadCompositionForHash = function(hash) {
 	var comp = $(".composition")[ID-1];
 	var rect = comp.getBoundingClientRect();
 	$(document).scrollTop(rect.top);
-	ml.showComposition($(comp).find(".composition-wrapper"), {}, { refreshAd: false });
+	ml.showComposition($(comp).find(".composition-wrapper"), {});
 }
 
-ml.refreshAd = function() {
-  if (!$("#carbonads")[0]) return;
-  if (typeof _carbonads !== 'undefined') _carbonads.refresh();
-}
+// ml.refreshAd = function() {
+//   if (!$("#carbonads")[0]) return;
+//   if (typeof _carbonads !== 'undefined') _carbonads.refresh();
+// }
 
 ml.removeAnimation = function(animation) {
 	var index = ml.overlay.animations.indexOf(animation);
@@ -421,20 +395,4 @@ ml.overlay.resizeCanvas = function() {
 	ml.overlay.ctx.fillRect(0, 0, ml.overlay.cW, ml.overlay.cH);
 };
 
-// ml.updateAdVisibility = function() {
-// 	if (ml.shouldDisplayAd()) {
-// 		$(".ml-carbon-ad-container").removeClass("ml-carbon-ad-container-hidden");
-// 	} else {
-// 		if ($(".ml-carbon-ad-container").hasClass("ml-carbon-ad-container-hidden")) return;
-// 		$(".ml-carbon-ad-container").addClass("ml-carbon-ad-container-hidden");
-// 	}
-// }
-
-// ml.updateAdVisibility = function() {
-// 	if (ml.shouldDisplayAd()) {
-// 		$(".ml-carbon-ad-container").removeClass("ml-carbon-ad-container-hidden");
-// 	} else {
-// 		if ($(".ml-carbon-ad-container").hasClass("ml-carbon-ad-container-hidden")) return;
-// 		$(".ml-carbon-ad-container").addClass("ml-carbon-ad-container-hidden");
-// 	}
-// }
+export default ml;

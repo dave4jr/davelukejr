@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -72,7 +72,7 @@
 	<div class="compositions">
 		<div class="composition" style="background-color: #9ba5b5">
 			<div class="composition-wrapper" data-color="9ba5b5">
-				<h1 class="ml1">
+				<h1 class="effect1">
 					<span class="text-wrapper">
 						<span class="line line1"></span>
 						<span class="letters">THURSDAY</span>
@@ -81,15 +81,15 @@
 				</h1>
 				<script>
 				// Wrap every letter in a span
-				$('.ml1 .letters').each(function() {
+				$('.effect1 .letters').each(function() {
 					$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
 				});
 
-				ml.timelines["ml1"] = anime.timeline({
+				ml.timelines["effect1"] = anime.timeline({
 						loop: true
 					})
 					.add({
-						targets: '.ml1 .letter',
+						targets: '.effect1 .letter',
 						scale: [0.3, 1],
 						opacity: [0, 1],
 						translateZ: 0,
@@ -99,7 +99,7 @@
 							return 70 * (i + 1)
 						}
 					}).add({
-						targets: '.ml1 .line',
+						targets: '.effect1 .line',
 						scaleX: [0, 1],
 						opacity: [0.5, 1],
 						easing: "easeOutExpo",
@@ -109,7 +109,7 @@
 							return 80 * (l - i);
 						}
 					}).add({
-						targets: '.ml1',
+						targets: '.effect1',
 						opacity: 0,
 						duration: 1000,
 						easing: "easeOutExpo",
@@ -126,19 +126,19 @@
 
 </code></pre>
 			<div class="composition-wrapper" data-color="e8c3b9">
-				<h1 class="ml2">Sunny mornings</h1>
+				<h1 class="effect2">Sunny mornings</h1>
 				<!--more-->
 				<script>
 				// Wrap every letter in a span
-				$('.ml2').each(function() {
+				$('.effect2').each(function() {
 					$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
 				});
 
-				ml.timelines["ml2"] = anime.timeline({
+				ml.timelines["effect2"] = anime.timeline({
 						loop: true
 					})
 					.add({
-						targets: '.ml2 .letter',
+						targets: '.effect2 .letter',
 						scale: [4, 1],
 						opacity: [0, 1],
 						translateZ: 0,
@@ -148,7 +148,7 @@
 							return 70 * i;
 						}
 					}).add({
-						targets: '.ml2',
+						targets: '.effect2',
 						opacity: 0,
 						duration: 1000,
 						easing: "easeOutExpo",
@@ -156,12 +156,12 @@
 					});
 				</script>
 				<style>
-				.ml2 {
+				.effect2 {
 					font-weight: 900;
 					font-size: 3.5em;
 				}
 				
-				.ml2 .letter {
+				.effect2 .letter {
 					display: inline-block;
 					line-height: 1em;
 				}
@@ -176,19 +176,19 @@
 
 </code></pre>
 			<div class="composition-wrapper" data-color="224a54">
-				<h1 class="ml3">Great Thinkers</h1>
+				<h1 class="effect3">Great Thinkers</h1>
 				<!--more-->
 				<script>
 				// Wrap every letter in a span
-				$('.ml3').each(function() {
+				$('.effect3').each(function() {
 					$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
 				});
 
-				ml.timelines["ml3"] = anime.timeline({
+				ml.timelines["effect3"] = anime.timeline({
 						loop: true
 					})
 					.add({
-						targets: '.ml3 .letter',
+						targets: '.effect3 .letter',
 						opacity: [0, 1],
 						easing: "easeInOutQuad",
 						duration: 2250,
@@ -196,7 +196,7 @@
 							return 150 * (i + 1)
 						}
 					}).add({
-						targets: '.ml3',
+						targets: '.effect3',
 						opacity: 0,
 						duration: 1000,
 						easing: "easeOutExpo",
@@ -204,7 +204,7 @@
 					});
 				</script>
 				<style>
-				.ml3 {
+				.effect3 {
 					font-weight: 900;
 					font-size: 3.5em;
 				}
@@ -223,7 +223,7 @@
 
 </code></pre>
 			<div class="composition-wrapper" data-color="1a1a1a">
-				<h1 class="ml4">
+				<h1 class="effect4">
 	<span class="letters letters-1">Ready</span>
 	<span class="letters letters-2">Set</span>
 	<span class="letters letters-3">Go!</span>
@@ -238,60 +238,60 @@
 				ml4.durationOut = 600;
 				ml4.delay = 500;
 
-				ml.timelines["ml4"] = anime.timeline({
+				ml.timelines["effect4"] = anime.timeline({
 						loop: true
 					})
 					.add({
-						targets: '.ml4 .letters-1',
+						targets: '.effect4 .letters-1',
 						opacity: ml4.opacityIn,
 						scale: ml4.scaleIn,
 						duration: ml4.durationIn
 					}).add({
-						targets: '.ml4 .letters-1',
+						targets: '.effect4 .letters-1',
 						opacity: 0,
 						scale: ml4.scaleOut,
 						duration: ml4.durationOut,
 						easing: "easeInExpo",
 						delay: ml4.delay
 					}).add({
-						targets: '.ml4 .letters-2',
+						targets: '.effect4 .letters-2',
 						opacity: ml4.opacityIn,
 						scale: ml4.scaleIn,
 						duration: ml4.durationIn
 					}).add({
-						targets: '.ml4 .letters-2',
+						targets: '.effect4 .letters-2',
 						opacity: 0,
 						scale: ml4.scaleOut,
 						duration: ml4.durationOut,
 						easing: "easeInExpo",
 						delay: ml4.delay
 					}).add({
-						targets: '.ml4 .letters-3',
+						targets: '.effect4 .letters-3',
 						opacity: ml4.opacityIn,
 						scale: ml4.scaleIn,
 						duration: ml4.durationIn
 					}).add({
-						targets: '.ml4 .letters-3',
+						targets: '.effect4 .letters-3',
 						opacity: 0,
 						scale: ml4.scaleOut,
 						duration: ml4.durationOut,
 						easing: "easeInExpo",
 						delay: ml4.delay
 					}).add({
-						targets: '.ml4',
+						targets: '.effect4',
 						opacity: 0,
 						duration: 500,
 						delay: 500
 					});
 				</script>
 				<style>
-				.ml4 {
+				.effect4 {
 					position: relative;
 					font-weight: 900;
 					font-size: 4.5em;
 				}
 				
-				.ml4 .letters {
+				.effect4 .letters {
 					position: absolute;
 					margin: auto;
 					left: 0;
@@ -318,7 +318,7 @@
 
 </code></pre>
 			<div class="composition-wrapper" data-color="f3e9c6">
-				<h1 class="ml5">
+				<h1 class="effect5">
 	<span class="text-wrapper">
 		<span class="line line1"></span>
 		<span class="letters letters-left">Signal</span>
@@ -329,17 +329,17 @@
 </h1>
 				<!--more-->
 				<script>
-				ml.timelines["ml5"] = anime.timeline({
+				ml.timelines["effect5"] = anime.timeline({
 						loop: true
 					})
 					.add({
-						targets: '.ml5 .line',
+						targets: '.effect5 .line',
 						opacity: [0.5, 1],
 						scaleX: [0, 1],
 						easing: "easeInOutExpo",
 						duration: 700
 					}).add({
-						targets: '.ml5 .line',
+						targets: '.effect5 .line',
 						duration: 600,
 						easing: "easeOutExpo",
 						translateY: function(e, i, l) {
@@ -347,28 +347,28 @@
 							return offset + "em";
 						}
 					}).add({
-						targets: '.ml5 .ampersand',
+						targets: '.effect5 .ampersand',
 						opacity: [0, 1],
 						scaleY: [0.5, 1],
 						easing: "easeOutExpo",
 						duration: 600,
 						offset: '-=600'
 					}).add({
-						targets: '.ml5 .letters-left',
+						targets: '.effect5 .letters-left',
 						opacity: [0, 1],
 						translateX: ["0.5em", 0],
 						easing: "easeOutExpo",
 						duration: 600,
 						offset: '-=300'
 					}).add({
-						targets: '.ml5 .letters-right',
+						targets: '.effect5 .letters-right',
 						opacity: [0, 1],
 						translateX: ["-0.5em", 0],
 						easing: "easeOutExpo",
 						duration: 600,
 						offset: '-=600'
 					}).add({
-						targets: '.ml5',
+						targets: '.effect5',
 						opacity: 0,
 						duration: 1000,
 						easing: "easeOutExpo",
@@ -376,14 +376,14 @@
 					});
 				</script>
 				<style>
-				.ml5 {
+				.effect5 {
 					position: relative;
 					font-weight: 300;
 					font-size: 4.5em;
 					color: #402d2d;
 				}
 				
-				.ml5 .text-wrapper {
+				.effect5 .text-wrapper {
 					position: relative;
 					display: inline-block;
 					padding-top: 0.1em;
@@ -392,7 +392,7 @@
 					line-height: 1em;
 				}
 				
-				.ml5 .line {
+				.effect5 .line {
 					position: absolute;
 					left: 0;
 					top: 0;
@@ -404,7 +404,7 @@
 					transform-origin: 0.5 0;
 				}
 				
-				.ml5 .ampersand {
+				.effect5 .ampersand {
 					font-family: Baskerville, "EB Garamond", serif;
 					font-style: italic;
 					font-weight: 400;
@@ -413,7 +413,7 @@
 					margin-left: -0.1em;
 				}
 				
-				.ml5 .letters {
+				.effect5 .letters {
 					display: inline-block;
 					opacity: 0;
 				}
@@ -432,7 +432,7 @@
 
 </code></pre>
 			<div class="composition-wrapper" data-color="c1605c">
-				<h1 class="ml6">
+				<h1 class="effect6">
 	<span class="text-wrapper">
 		<span class="letters">Beautiful Questions</span>
 	</span>
@@ -440,15 +440,15 @@
 				<!--more-->
 				<script>
 				// Wrap every letter in a span
-				$('.ml6 .letters').each(function() {
+				$('.effect6 .letters').each(function() {
 					$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
 				});
 
-				ml.timelines["ml6"] = anime.timeline({
+				ml.timelines["effect6"] = anime.timeline({
 						loop: true
 					})
 					.add({
-						targets: '.ml6 .letter',
+						targets: '.effect6 .letter',
 						translateY: ["1.1em", 0],
 						translateZ: 0,
 						duration: 750,
@@ -456,7 +456,7 @@
 							return 50 * i;
 						}
 					}).add({
-						targets: '.ml6',
+						targets: '.effect6',
 						opacity: 0,
 						duration: 1000,
 						easing: "easeOutExpo",
@@ -464,13 +464,13 @@
 					});
 				</script>
 				<style>
-				.ml6 {
+				.effect6 {
 					position: relative;
 					font-weight: 900;
 					font-size: 3.3em;
 				}
 				
-				.ml6 .text-wrapper {
+				.effect6 .text-wrapper {
 					position: relative;
 					display: inline-block;
 					padding-top: 0.2em;
@@ -479,7 +479,7 @@
 					overflow: hidden;
 				}
 				
-				.ml6 .letter {
+				.effect6 .letter {
 					display: inline-block;
 					line-height: 1em;
 				}
@@ -498,7 +498,7 @@
 
 </code></pre>
 			<div class="composition-wrapper" data-color="45383c">
-				<h1 class="ml7">
+				<h1 class="effect7">
 	<span class="text-wrapper">
 		<span class="letters">Reality is broken</span>
 	</span>
@@ -506,15 +506,15 @@
 				<!--more-->
 				<script>
 				// Wrap every letter in a span
-				$('.ml7 .letters').each(function() {
+				$('.effect7 .letters').each(function() {
 					$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
 				});
 
-				ml.timelines["ml7"] = anime.timeline({
+				ml.timelines["effect7"] = anime.timeline({
 						loop: true
 					})
 					.add({
-						targets: '.ml7 .letter',
+						targets: '.effect7 .letter',
 						translateY: ["1.1em", 0],
 						translateX: ["0.55em", 0],
 						translateZ: 0,
@@ -525,7 +525,7 @@
 							return 50 * i;
 						}
 					}).add({
-						targets: '.ml7',
+						targets: '.effect7',
 						opacity: 0,
 						duration: 1000,
 						easing: "easeOutExpo",
@@ -533,13 +533,13 @@
 					});
 				</script>
 				<style>
-				.ml7 {
+				.effect7 {
 					position: relative;
 					font-weight: 900;
 					font-size: 3.7em;
 				}
 				
-				.ml7 .text-wrapper {
+				.effect7 .text-wrapper {
 					position: relative;
 					display: inline-block;
 					padding-top: 0.2em;
@@ -548,7 +548,7 @@
 					overflow: hidden;
 				}
 				
-				.ml7 .letter {
+				.effect7 .letter {
 					transform-origin: 0 100%;
 					display: inline-block;
 					line-height: 1em;
@@ -572,7 +572,7 @@
 
 </code></pre>
 			<div class="composition-wrapper" data-color="98bec8">
-				<h1 class="ml8">
+				<h1 class="effect8">
 	<span class="letters-container">
 		<span class="letters letters-left">Hi</span>
 		<span class="letters bang">!</span>
@@ -583,41 +583,41 @@
 </h1>
 				<!--more-->
 				<script>
-				ml.timelines["ml8"] = anime.timeline({
+				ml.timelines["effect8"] = anime.timeline({
 						loop: true
 					})
 					.add({
-						targets: '.ml8 .circle-white',
+						targets: '.effect8 .circle-white',
 						scale: [0, 3],
 						opacity: [1, 0],
 						easing: "easeInOutExpo",
 						rotateZ: 360,
 						duration: 1100
 					}).add({
-						targets: '.ml8 .circle-container',
+						targets: '.effect8 .circle-container',
 						scale: [0, 1],
 						duration: 1100,
 						easing: "easeInOutExpo",
 						offset: '-=1000'
 					}).add({
-						targets: '.ml8 .circle-dark',
+						targets: '.effect8 .circle-dark',
 						scale: [0, 1],
 						duration: 1100,
 						easing: "easeOutExpo",
 						offset: '-=600'
 					}).add({
-						targets: '.ml8 .letters-left',
+						targets: '.effect8 .letters-left',
 						scale: [0, 1],
 						duration: 1200,
 						offset: '-=550'
 					}).add({
-						targets: '.ml8 .bang',
+						targets: '.effect8 .bang',
 						scale: [0, 1],
 						rotateZ: [45, 15],
 						duration: 1200,
 						offset: '-=1000'
 					}).add({
-						targets: '.ml8',
+						targets: '.effect8',
 						opacity: 0,
 						duration: 1000,
 						easing: "easeOutExpo",
@@ -625,7 +625,7 @@
 					});
 
 				anime({
-					targets: '.ml8 .circle-dark-dashed',
+					targets: '.effect8 .circle-dark-dashed',
 					rotateZ: 360,
 					duration: 8000,
 					easing: "linear",
@@ -633,7 +633,7 @@
 				});
 				</script>
 				<style>
-				h1.ml8 {
+				h1.effect8 {
 					font-weight: 900;
 					font-size: 4.5em;
 					color: #fff;
@@ -641,7 +641,7 @@
 					height: 3em;
 				}
 				
-				.ml8 .letters-container {
+				.effect8 .letters-container {
 					position: absolute;
 					left: 0;
 					right: 0;
@@ -651,7 +651,7 @@
 					height: 1em;
 				}
 				
-				.ml8 .letters {
+				.effect8 .letters {
 					position: relative;
 					z-index: 2;
 					display: inline-block;
@@ -660,13 +660,13 @@
 					top: -0.2em;
 				}
 				
-				.ml8 .bang {
+				.effect8 .bang {
 					font-size: 1.4em;
 					top: auto;
 					left: -0.06em;
 				}
 				
-				.ml8 .circle {
+				.effect8 .circle {
 					position: absolute;
 					left: 0;
 					right: 0;
@@ -675,14 +675,14 @@
 					bottom: 0;
 				}
 				
-				.ml8 .circle-white {
+				.effect8 .circle-white {
 					width: 3em;
 					height: 3em;
 					border: 2px dashed white;
 					border-radius: 2em;
 				}
 				
-				.ml8 .circle-dark {
+				.effect8 .circle-dark {
 					width: 2.2em;
 					height: 2.2em;
 					background-color: #4f7b86;
@@ -690,7 +690,7 @@
 					z-index: 1;
 				}
 				
-				.ml8 .circle-dark-dashed {
+				.effect8 .circle-dark-dashed {
 					border-radius: 2.4em;
 					background-color: transparent;
 					border: 2px dashed #4f7b86;
@@ -712,7 +712,7 @@
 
 </code></pre>
 			<div class="composition-wrapper" data-color="1a1a1a">
-				<h1 class="ml9">
+				<h1 class="effect9">
 	<span class="text-wrapper">
 		<span class="letters">Coffee mornings</span>
 	</span>
@@ -720,15 +720,15 @@
 				<!--more-->
 				<script>
 				// Wrap every letter in a span
-				$('.ml9 .letters').each(function() {
+				$('.effect9 .letters').each(function() {
 					$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
 				});
 
-				ml.timelines["ml9"] = anime.timeline({
+				ml.timelines["effect9"] = anime.timeline({
 						loop: true
 					})
 					.add({
-						targets: '.ml9 .letter',
+						targets: '.effect9 .letter',
 						scale: [0, 1],
 						duration: 1500,
 						elasticity: 600,
@@ -736,7 +736,7 @@
 							return 45 * (i + 1)
 						}
 					}).add({
-						targets: '.ml9',
+						targets: '.effect9',
 						opacity: 0,
 						duration: 1000,
 						easing: "easeOutExpo",
@@ -744,13 +744,13 @@
 					});
 				</script>
 				<style>
-				.ml9 {
+				.effect9 {
 					position: relative;
 					font-weight: 200;
 					font-size: 4em;
 				}
 				
-				.ml9 .text-wrapper {
+				.effect9 .text-wrapper {
 					position: relative;
 					display: inline-block;
 					padding-top: 0.2em;
@@ -759,7 +759,7 @@
 					overflow: hidden;
 				}
 				
-				.ml9 .letter {
+				.effect9 .letter {
 					transform-origin: 50% 100%;
 					display: inline-block;
 					line-height: 1em;
@@ -771,7 +771,7 @@
 			<span class="composition-hint">
 		<img class="composition-hint-arrows" src="images/source.svg" width="18" height="13">
 		Source</span>
-			<pre class="hidden"><code class="composition-static-html">&lt;h1 class=&quot;ml10&quot;&gt;
+			<pre class="hidden"><code class="composition-static-html">&lt;h1 class=&quot;effec10&quot;&gt;
 	&lt;span class=&quot;text-wrapper&quot;&gt;
 		&lt;span class=&quot;letters&quot;&gt;Domino Dreams&lt;/span&gt;
 	&lt;/span&gt;
@@ -779,7 +779,7 @@
 
 </code></pre>
 			<div class="composition-wrapper" data-color="224a54">
-				<h1 class="ml10">
+				<h1 class="effect10">
 	<span class="text-wrapper">
 		<span class="letters">Domino Dreams</span>
 	</span>
@@ -787,22 +787,22 @@
 				<!--more-->
 				<script>
 				// Wrap every letter in a span
-				$('.ml10 .letters').each(function() {
+				$('.effect10 .letters').each(function() {
 					$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
 				});
 
-				ml.timelines["ml10"] = anime.timeline({
+				ml.timelines["effect10"] = anime.timeline({
 						loop: true
 					})
 					.add({
-						targets: '.ml10 .letter',
+						targets: '.effect10 .letter',
 						rotateY: [-90, 0],
 						duration: 1300,
 						delay: function(el, i) {
 							return 45 * i;
 						}
 					}).add({
-						targets: '.ml10',
+						targets: '.effect10',
 						opacity: 0,
 						duration: 1000,
 						easing: "easeOutExpo",
@@ -810,13 +810,13 @@
 					});
 				</script>
 				<style>
-				.ml10 {
+				.effect10 {
 					position: relative;
 					font-weight: 900;
 					font-size: 4em;
 				}
 				
-				.ml10 .text-wrapper {
+				.effect10 .text-wrapper {
 					position: relative;
 					display: inline-block;
 					padding-top: 0.2em;
@@ -825,7 +825,7 @@
 					overflow: hidden;
 				}
 				
-				.ml10 .letter {
+				.effect10 .letter {
 					display: inline-block;
 					line-height: 1em;
 					transform-origin: 0 0;
@@ -846,7 +846,7 @@
 
 </code></pre>
 			<div class="composition-wrapper" data-color="e8c3b9">
-				<h1 class="ml11">
+				<h1 class="effect11">
 	<span class="text-wrapper">
 		<span class="line line1"></span>
 		<span class="letters">Hello Goodbye</span>
@@ -854,12 +854,12 @@
 </h1>
 				<!--more-->
 				<style>
-				.ml11 {
+				.effect11 {
 					font-weight: 900;
 					font-size: 3.5em;
 				}
 				
-				.ml11 .text-wrapper {
+				.effect11 .text-wrapper {
 					position: relative;
 					display: inline-block;
 					padding-top: 0.1em;
@@ -867,7 +867,7 @@
 					padding-bottom: 0.15em;
 				}
 				
-				.ml11 .line {
+				.effect11 .line {
 					opacity: 0;
 					position: absolute;
 					left: 0;
@@ -877,40 +877,40 @@
 					transform-origin: 0 50%;
 				}
 				
-				.ml11 .line1 {
+				.effect11 .line1 {
 					top: 0;
 					left: 0;
 				}
 				
-				.ml11 .letter {
+				.effect11 .letter {
 					display: inline-block;
 					line-height: 1em;
 				}
 				</style>
 				<script>
 				// Wrap every letter in a span
-				$('.ml11 .letters').each(function() {
+				$('.effect11 .letters').each(function() {
 					$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
 				});
 
-				ml.timelines["ml11"] = anime.timeline({
+				ml.timelines["effect11"] = anime.timeline({
 						loop: true
 					})
 					.add({
-						targets: '.ml11 .line',
+						targets: '.effect11 .line',
 						scaleY: [0, 1],
 						opacity: [0.5, 1],
 						easing: "easeOutExpo",
 						duration: 700
 					})
 					.add({
-						targets: '.ml11 .line',
-						translateX: [0, $(".ml11 .letters").width()],
+						targets: '.effect11 .line',
+						translateX: [0, $(".effect11 .letters").width()],
 						easing: "easeOutExpo",
 						duration: 700,
 						delay: 100
 					}).add({
-						targets: '.ml11 .letter',
+						targets: '.effect11 .letter',
 						opacity: [0, 1],
 						easing: "easeOutExpo",
 						duration: 600,
@@ -919,7 +919,7 @@
 							return 34 * (i + 1)
 						}
 					}).add({
-						targets: '.ml11',
+						targets: '.effect11',
 						opacity: 0,
 						duration: 1000,
 						easing: "easeOutExpo",
@@ -936,19 +936,19 @@
 
 </code></pre>
 			<div class="composition-wrapper" data-color="9ba5b5">
-				<h1 class="ml12">A new production</h1>
+				<h1 class="effect12">A new production</h1>
 				<!--more-->
 				<script>
 				// Wrap every letter in a span
-				$('.ml12').each(function() {
+				$('.effect12').each(function() {
 					$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
 				});
 
-				ml.timelines["ml12"] = anime.timeline({
+				ml.timelines["effect12"] = anime.timeline({
 						loop: true
 					})
 					.add({
-						targets: '.ml12 .letter',
+						targets: '.effect12 .letter',
 						translateX: [40, 0],
 						translateZ: 0,
 						opacity: [0, 1],
@@ -958,7 +958,7 @@
 							return 500 + 30 * i;
 						}
 					}).add({
-						targets: '.ml12 .letter',
+						targets: '.effect12 .letter',
 						translateX: [0, -30],
 						opacity: [1, 0],
 						easing: "easeInExpo",
@@ -969,14 +969,14 @@
 					});
 				</script>
 				<style>
-				.ml12 {
+				.effect12 {
 					font-weight: 200;
 					font-size: 1.8em;
 					text-transform: uppercase;
 					letter-spacing: 0.5em;
 				}
 				
-				.ml12 .letter {
+				.effect12 .letter {
 					display: inline-block;
 					line-height: 1em;
 				}
@@ -991,19 +991,19 @@
 
 </code></pre>
 			<div class="composition-wrapper" data-color="98bec8">
-				<h1 class="ml13">Rising Strong</h1>
+				<h1 class="effect13">Rising Strong</h1>
 				<!--more-->
 				<script>
 				// Wrap every letter in a span
-				$('.ml13').each(function() {
+				$('.effect13').each(function() {
 					$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
 				});
 
-				ml.timelines["ml13"] = anime.timeline({
+				ml.timelines["effect13"] = anime.timeline({
 						loop: true
 					})
 					.add({
-						targets: '.ml13 .letter',
+						targets: '.effect13 .letter',
 						translateY: [100, 0],
 						translateZ: 0,
 						opacity: [0, 1],
@@ -1013,7 +1013,7 @@
 							return 300 + 30 * i;
 						}
 					}).add({
-						targets: '.ml13 .letter',
+						targets: '.effect13 .letter',
 						translateY: [0, -100],
 						opacity: [1, 0],
 						easing: "easeInExpo",
@@ -1024,14 +1024,14 @@
 					});
 				</script>
 				<style>
-				.ml13 {
+				.effect13 {
 					font-size: 1.9em;
 					text-transform: uppercase;
 					letter-spacing: 0.5em;
 					font-weight: 600;
 				}
 				
-				.ml13 .letter {
+				.effect13 .letter {
 					display: inline-block;
 					line-height: 1em;
 				}
@@ -1051,7 +1051,7 @@
 
 </code></pre>
 			<div class="composition-wrapper" data-color="45383c">
-				<h1 class="ml14">
+				<h1 class="effect14">
 	<span class="text-wrapper">
 		<span class="letters">Find Your Element</span>
 		<span class="line"></span>
@@ -1060,21 +1060,21 @@
 				<!--more-->
 				<script>
 				// Wrap every letter in a span
-				$('.ml14 .letters').each(function() {
+				$('.effect14 .letters').each(function() {
 					$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
 				});
 
-				ml.timelines["ml14"] = anime.timeline({
+				ml.timelines["effect14"] = anime.timeline({
 						loop: true
 					})
 					.add({
-						targets: '.ml14 .line',
+						targets: '.effect14 .line',
 						scaleX: [0, 1],
 						opacity: [0.5, 1],
 						easing: "easeInOutExpo",
 						duration: 900
 					}).add({
-						targets: '.ml14 .letter',
+						targets: '.effect14 .letter',
 						opacity: [0, 1],
 						translateX: [40, 0],
 						translateZ: 0,
@@ -1086,7 +1086,7 @@
 							return 150 + 25 * i;
 						}
 					}).add({
-						targets: '.ml14',
+						targets: '.effect14',
 						opacity: 0,
 						duration: 1000,
 						easing: "easeOutExpo",
@@ -1094,12 +1094,12 @@
 					});
 				</script>
 				<style>
-				.ml14 {
+				.effect14 {
 					font-weight: 200;
 					font-size: 3.2em;
 				}
 				
-				.ml14 .text-wrapper {
+				.effect14 .text-wrapper {
 					position: relative;
 					display: inline-block;
 					padding-top: 0.1em;
@@ -1107,7 +1107,7 @@
 					padding-bottom: 0.15em;
 				}
 				
-				.ml14 .line {
+				.effect14 .line {
 					opacity: 0;
 					position: absolute;
 					left: 0;
@@ -1118,7 +1118,7 @@
 					bottom: 0;
 				}
 				
-				.ml14 .letter {
+				.effect14 .letter {
 					display: inline-block;
 					line-height: 1em;
 				}
@@ -1136,17 +1136,17 @@
 
 </code></pre>
 			<div class="composition-wrapper" data-color="c1605c">
-				<h1 class="ml15">
+				<h1 class="effect15">
 	<span class="word">Out</span>
 	<span class="word">now</span>
 </h1>
 				<!--more-->
 				<script>
-				ml.timelines["ml15"] = anime.timeline({
+				ml.timelines["effect15"] = anime.timeline({
 						loop: true
 					})
 					.add({
-						targets: '.ml15 .word',
+						targets: '.effect15 .word',
 						scale: [14, 1],
 						opacity: [0, 1],
 						easing: "easeOutCirc",
@@ -1155,7 +1155,7 @@
 							return 800 * i;
 						}
 					}).add({
-						targets: '.ml15',
+						targets: '.effect15',
 						opacity: 0,
 						duration: 1000,
 						easing: "easeOutExpo",
@@ -1163,14 +1163,14 @@
 					});
 				</script>
 				<style>
-				.ml15 {
+				.effect15 {
 					font-weight: 800;
 					font-size: 3.8em;
 					text-transform: uppercase;
 					letter-spacing: 0.5em;
 				}
 				
-				.ml15 .word {
+				.effect15 .word {
 					display: inline-block;
 					line-height: 1em;
 				}
@@ -1185,19 +1185,19 @@
 
 </code></pre>
 			<div class="composition-wrapper" data-color="f3e9c6">
-				<h1 class="ml16">Made with love</h1>
+				<h1 class="effect16">Made with love</h1>
 				<!--more-->
 				<script>
 				// Wrap every letter in a span
-				$('.ml16').each(function() {
+				$('.effect16').each(function() {
 					$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
 				});
 
-				ml.timelines["ml16"] = anime.timeline({
+				ml.timelines["effect16"] = anime.timeline({
 						loop: true
 					})
 					.add({
-						targets: '.ml16 .letter',
+						targets: '.effect16 .letter',
 						translateY: [-100, 0],
 						easing: "easeOutExpo",
 						duration: 1400,
@@ -1205,7 +1205,7 @@
 							return 30 * i;
 						}
 					}).add({
-						targets: '.ml16',
+						targets: '.effect16',
 						opacity: 0,
 						duration: 1000,
 						easing: "easeOutExpo",
@@ -1213,7 +1213,7 @@
 					});
 				</script>
 				<style>
-				.ml16 {
+				.effect16 {
 					color: #402d2d;
 					padding: 40px 0;
 					font-weight: 800;
@@ -1223,7 +1223,7 @@
 					overflow: hidden;
 				}
 				
-				.ml16 .letter {
+				.effect16 .letter {
 					display: inline-block;
 					line-height: 1em;
 				}
