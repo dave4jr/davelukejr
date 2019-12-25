@@ -21,7 +21,10 @@ class App extends React.Component {
 				<canvas className="color-overlay" id="color-overlay"></canvas>
 				<Header />
 				<div className="compositions">
-					<Composition effect="effect8" bg="#8E8D8A" fg="#444" text="Hi"/>
+					<Composition effect="effect15" bg="#8E8D8A" fg="#444" text="Out Now"/>
+				</div>
+				<div className="collection-footer-info">
+					
 				</div>
 			</div>
 		)

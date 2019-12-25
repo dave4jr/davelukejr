@@ -31,7 +31,7 @@ class Composition extends React.Component {
 				</span>
 			</h1>
 			
-		} else if (_.includes(["effect2", "effect3", "effect12", "effect13"], this.props.effect)){
+		} else if (_.includes(["effect2", "effect3", "effect12", "effect13", "effect16"], this.props.effect)){
 			effect = <h1 className={this.props.effect}>{this.props.text}</h1>
 			
 		} else if (_.includes(["effect4"], this.props.effect)){
@@ -89,15 +89,12 @@ class Composition extends React.Component {
 				</span>
 			</h1>
 				
-			
-			
-			
-			
-			
-			
-			
-			
-			
+		} else if (_.includes(["effect15"], this.props.effect)){
+			effect = <h1 className={this.props.effect}>
+				{_.split(this.props.text, " ").map((word, kk) => {
+					return <span key={kk} className="word">{word}</span>
+				})}
+			</h1>
 		}
 		
 		return (

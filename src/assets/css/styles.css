@@ -951,11 +951,11 @@ p {
   }
 }
 .collection-footer-info {
-  padding-top: 80px;
+  padding-top: 30px;
   background-color: #fff;
   color: #000;
   text-align: center;
-  padding-bottom: 80px;
+  padding-bottom: 30px;
 }
 
 .collection-footer-box {
