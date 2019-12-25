@@ -257,7 +257,6 @@ const effects = (effect) => {
 				delay: 1000
 			});
 			break;
-			
 		
 		case "circleRotate":
 		case "effect8":

@@ -22,7 +22,7 @@ class Composition extends React.Component {
 	
 	render() {
 		let effect;
-		if (_.includes(["effect1", "effect2", "effect3"], this.props.effect)){
+		if (_.includes(["effect1"], this.props.effect)){
 			effect = <h1 className={this.props.effect}>
 				<span className="text-wrapper">
 					<span className="line line1"></span>
@@ -30,12 +30,17 @@ class Composition extends React.Component {
 					<span className="line line2"></span>
 				</span>
 			</h1>
+			
+		} else if (_.includes(["effect2", "effect3"], this.props.effect)){
+			effect = <h1 className={this.props.effect}>{this.props.text}</h1>
+			
 		} else if (_.includes(["effect4"], this.props.effect)){
 			effect = <h1 className={this.props.effect}>
 				{_.split(this.props.text, " ").map((letter, kk) => {
 					return <span key={kk} className={"letters letters-" + kk}>{letter}</span>
 				})}
 			</h1>
+			
 		} else if (_.includes(["effect5"], this.props.effect)){
 			const letters = _.split(this.props.text, " ")
 			const left = letters[0];
@@ -47,6 +52,13 @@ class Composition extends React.Component {
 					<span class="letters ampersand">&amp;</span>
 					<span class="letters letters-right">{right}</span>
 					<span class="line line2"></span>
+				</span>
+			</h1>
+			
+		} else if (_.includes(["effect6", "effect7"], this.props.effect)){
+			effect = <h1 className={this.props.effect}>
+				<span className="text-wrapper">
+					<span className="letters">{this.props.text}</span>
 				</span>
 			</h1>
 		}
