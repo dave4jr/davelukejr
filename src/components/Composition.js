@@ -31,7 +31,7 @@ class Composition extends React.Component {
 				</span>
 			</h1>
 			
-		} else if (_.includes(["effect2", "effect3"], this.props.effect)){
+		} else if (_.includes(["effect2", "effect3", "effect12", "effect13"], this.props.effect)){
 			effect = <h1 className={this.props.effect}>{this.props.text}</h1>
 			
 		} else if (_.includes(["effect4"], this.props.effect)){
@@ -55,16 +55,50 @@ class Composition extends React.Component {
 				</span>
 			</h1>
 			
-		} else if (_.includes(["effect6", "effect7"], this.props.effect)){
+		} else if (_.includes(["effect6", "effect7", "effect9", "effect10"], this.props.effect)){
 			effect = <h1 className={this.props.effect}>
 				<span className="text-wrapper">
 					<span className="letters">{this.props.text}</span>
 				</span>
 			</h1>
+			
+		} else if (_.includes(["effect8"], this.props.effect)){
+			effect = <h1 className={this.props.effect}>
+				<span className="letters-container">
+					<span className="letters letters-left">{this.props.text}</span>
+					<span className="letters bang">!</span>
+				</span>
+				<span className="circle circle-white"></span>
+				<span className="circle circle-dark"></span>
+				<span className="circle circle-container"><span className="circle circle-dark-dashed"></span></span>
+			</h1>
+			
+		} else if (_.includes(["effect11"], this.props.effect)){
+			effect = <h1 className={this.props.effect}>
+				<span className="text-wrapper">
+					<span className="line line1"></span>
+					<span className="letters">{this.props.text}</span>
+				</span>
+			</h1>
+				
+		} else if (_.includes(["effect14"], this.props.effect)){
+			effect = <h1 className={this.props.effect}>
+				<span className="text-wrapper">
+					<span className="letters">{this.props.text}</span>
+					<span className="line"></span>
+				</span>
+			</h1>
+				
+			
+			
+			
+			
+			
+			
+			
+			
+			
 		}
-		
-		
-		
 		
 		return (
 			<div className="composition" style={{backgroundColor: this.props.bg}}>
