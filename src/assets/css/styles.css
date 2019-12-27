@@ -455,7 +455,7 @@ p {
   display: block;
   height: 2px;
   width: 100%;
-  background-color: #B0AEA6;
+  background-color: #fff;
   margin-bottom: 4px;
   border-radius: 2px;
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s ease-out;
@@ -952,8 +952,8 @@ p {
 }
 .collection-footer-info {
   padding-top: 30px;
-  background-color: #fff;
-  color: #000;
+  background-color: #333;
+  color: #fff;
   text-align: center;
   padding-bottom: 30px;
 }
@@ -1569,6 +1569,7 @@ a {
 
 .header {
   padding: 20px 0;
+  background: #BFA694;
 }
 
 .header-title {
@@ -1576,13 +1577,14 @@ a {
   font-weight: bold;
   letter-spacing: 6px;
   text-transform: uppercase;
-  color: #B0AEA6;
+  color: #fff;
   cursor: default;
 }
 
 .header-title .letter {
   display: inline-block;
   transform-origin: 50% 50%;
+  color: #fff;
 }
 
 @media (max-width: 480px) {

@@ -93,7 +93,6 @@ ml.compShouldPlay = function(comp) {
 
 ml.playComposition = function(comp) {
 	var compID = $(comp).find("h1").attr("class");
-	console.log(compID);
 	ml.timelines[compID].play();
 }
 
