@@ -61,8 +61,9 @@ class Composition extends React.Component {
 		} else if (_.includes(["effect8"], this.props.effect)){
 			effect = <h1 className={this.props.effect}>
 				<span className="letters-container">
+					<span style={{color: this.props.color}} className="letters bang"></span>
 					<span style={{color: this.props.color}} className="letters letters-left">{this.props.text}</span>
-					<span style={{color: this.props.color}} className="letters bang">{this.props.punctuation}</span>
+					<span style={{color: this.props.color}} className="letters bang">!</span>
 				</span>
 				<span className="circle circle-white"></span>
 				<span style={{backgroundColor: this.props.circle}} className="circle circle-dark"></span>

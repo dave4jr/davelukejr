@@ -11,11 +11,14 @@ const Header = (props) => {
 			<div className="site-nav-animation-wrapper menu-animation-wrapper">
 				<div className="site-nav-animated-background menu-animated-background"></div>
 			</div>
+			
+			{/*
 			<a className="menu menu-white menu-movingLetters" href="">
 				<span className="menu-icon-line-1 menu-icon-line"></span>
 				<span className="menu-icon-line-2 menu-icon-line"></span>
 				<span className="menu-icon-line-3 menu-icon-line"></span>
 			</a>
+			*/}
 			<div className="site-nav-overlay js-nav">
 				<div className="nav-content">
 					<div className="js-nav-header nav-header">

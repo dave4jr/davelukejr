@@ -50,7 +50,6 @@ const effects = (effect) => {
 		case "zoomLTR":
 		case "effect2":
 			$('.effect2').each(function() {
-				// eslint-disable-next-line
 				$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
 			});
 
@@ -142,6 +141,30 @@ const effects = (effect) => {
 				duration: ml4.durationIn
 			}).add({
 				targets: '.effect4 .letters-3',
+				opacity: 0,
+				scale: ml4.scaleOut,
+				duration: ml4.durationOut,
+				easing: "easeInExpo",
+				delay: ml4.delay
+			}).add({
+				targets: '.effect4 .letters-4',
+				opacity: ml4.opacityIn,
+				scale: ml4.scaleIn,
+				duration: ml4.durationIn
+			}).add({
+				targets: '.effect4 .letters-4',
+				opacity: 0,
+				scale: ml4.scaleOut,
+				duration: ml4.durationOut,
+				easing: "easeInExpo",
+				delay: ml4.delay
+			}).add({
+				targets: '.effect4 .letters-5',
+				opacity: ml4.opacityIn,
+				scale: ml4.scaleIn,
+				duration: ml4.durationIn
+			}).add({
+				targets: '.effect4 .letters-5',
 				opacity: 0,
 				scale: ml4.scaleOut,
 				duration: ml4.durationOut,

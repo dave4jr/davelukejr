@@ -1349,7 +1349,7 @@ h1.effect8 {
 
 .effect8 .circle {
   position: absolute;
-  left: 0;
+  left: -5px;
   right: 0;
   margin: auto;
   top: 0;
@@ -1364,19 +1364,19 @@ h1.effect8 {
 }
 
 .effect8 .circle-dark {
-  width: 2.2em;
-  height: 2.2em;
+  width: 3.2em;
+  height: 3.2em;
   background-color: #4f7b86;
   border-radius: 3em;
   z-index: 1;
 }
 
 .effect8 .circle-dark-dashed {
-  border-radius: 2.4em;
+  border-radius: 3.4em;
   background-color: transparent;
   border: 2px dashed #4f7b86;
-  width: 2.3em;
-  height: 2.3em;
+  width: 3.3em;
+  height: 3.3em;
 }
 
 .effect9 {
@@ -1569,7 +1569,7 @@ a {
 
 .header {
   padding: 20px 0;
-  background: #BFA694;
+  background: #335062;
 }
 
 .header-title {

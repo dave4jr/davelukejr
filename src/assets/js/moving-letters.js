@@ -11,16 +11,16 @@ $(function() {
 	ml.init();
 	ml.onlyPlayVisible();
 
-	$(".composition-wrapper").click(function(e) {
-		ml.showComposition(this, e);
-	});
+	// $(".composition-wrapper").click(function(e) {
+	// 	ml.showComposition(this, e);
+	// });
 
-	$(".composition-back-button").click(function(e) {
-		e.preventDefault();
-		ml.hideSource();
-	});
+	// $(".composition-back-button").click(function(e) {
+	// 	e.preventDefault();
+	// 	ml.hideSource();
+	// });
 
-	$(".header-title").click(ml.animateHeader);
+	// $(".header-title").click(ml.animateHeader);
 
 	$(window).on("scroll resize", ml.onlyPlayVisible).on("resize", ml.overlay.resizeCanvas);
 	$(document).on("app:menuDidReveal", ml.pauseAllCompositions).on("app:menuWillHide", ml.onlyPlayVisible).on("pressed:ESC", ml.hideSource);
