@@ -1147,6 +1147,11 @@ p {
 	font-weight: 900;
 	font-size: 3.3em;
 }
+.effect6 .letters {
+	font-family: "Sacramento";
+	font-size: 66px;
+	line-height: 80px;
+}
 .effect6 .text-wrapper {
 	position: relative;
 	display: inline-block;
@@ -1194,16 +1199,19 @@ h1.effect8 {
 	height: 1em;
 }
 .effect8 .letters {
+	font-family: "Amatic SC";
 	position: relative;
 	z-index: 2;
 	display: inline-block;
-	line-height: 0.7em;
+	line-height: 36px;
+	letter-spacing: 1px;
 	right: -0.12em;
-	top: -0.2em;
+	top: 0px;
 }
 .effect8 .bang {
 	font-size: 1.4em;
-	top: auto;
+	position: relative;
+	top: 10px;
 	left: 10px;
 }
 .effect8 .circle {
@@ -1238,6 +1246,10 @@ h1.effect8 {
 	position: relative;
 	font-weight: 200;
 	font-size: 4em;
+}
+.effect9 {
+	font-family: "Advent Pro";
+	
 }
 .effect9 .text-wrapper {
 	position: relative;
@@ -1296,7 +1308,24 @@ h1.effect8 {
 }
 .effect11 .letter {
 	display: inline-block;
-	line-height: 1em;
+	line-height: 34px;
+	font-family: "Dank Mono";
+	font-size: 30px;
+	
+	&:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5) {
+		font-style: italic;
+	}
+	&:nth-child(6), &:nth-child(7), &:nth-child(8), &:nth-child(9) {
+		color: #df7360;
+		font-weight: 300;
+	}
+	&:nth-child(11), &:nth-child(12), &:nth-child(13), &:nth-child(14), &:nth-child(15), &:nth-child(16), &:nth-child(17), &:nth-child(18), &:nth-child(19), &:nth-child(20), &:nth-child(21) {
+		color: #df7360;
+		font-weight: 600;
+	}
+	&:nth-child(22) {
+		font-weight: 400;
+	}
 }
 .effect12 {
 	font-weight: 200;

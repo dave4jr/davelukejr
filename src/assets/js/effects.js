@@ -386,8 +386,7 @@ const effects = (effect) => {
 		case "typed":
 		case "effect11":
 			$('.effect11 .letters').each(function() {
-				// eslint-disable-next-line
-				$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+				$(this).html($(this).text().replace(/([^\x00-\x80]|\S)/g, "<span class='letter'>$&</span>"));
 			});
 			ml.timelines["effect11"] = anime.timeline({
 				loop: true
@@ -397,8 +396,7 @@ const effects = (effect) => {
 				opacity: [0.5, 1],
 				easing: "easeOutExpo",
 				duration: 700
-			})
-			.add({
+			}).add({
 				targets: '.effect11 .line',
 				translateX: [0, $(".effect11 .letters").width()],
 				easing: "easeOutExpo",
@@ -420,6 +418,7 @@ const effects = (effect) => {
 				easing: "easeOutExpo",
 				delay: 1000
 			});
+			
 			break;
 			
 			
